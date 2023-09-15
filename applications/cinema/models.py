@@ -48,7 +48,7 @@ class Rating(models.Model):
     ### validators используется для определения функций проверки
     rating = models.PositiveSmallIntegerField(validators=[
         MinValueValidator(1),
-        MaxValueValidator(2),
+        MaxValueValidator(5),
     ], blank=True, null=True)
 
     def __str__(self):

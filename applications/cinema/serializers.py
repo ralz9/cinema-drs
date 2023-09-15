@@ -3,7 +3,8 @@ from rest_framework import serializers
 from applications.cinema.models import Rating, Movie, Like
 
 class LikeSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='Like')
+
+    owner = serializers.ReadOnlyField(source='owner.email')
     class Meta:
         model = Like
         fields = '__all__'

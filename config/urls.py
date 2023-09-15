@@ -24,10 +24,10 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="py29 blog",
+      title="cinematica",
       default_version='v1',
-      description="Best blog",
-      contact=openapi.Contact(email="admin@admin.com"),
+      description="online cinema",
+      contact=openapi.Contact(email="RodionDereha@gmail.com"),
    ),
    public=True,
 )

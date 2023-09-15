@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model, update_session_auth_hash
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView

@@ -3,7 +3,7 @@ from applications.cinema.models import Movie
 # Register your models here.
 
 @admin.register(Movie)
-class PostAdmin(admin.ModelAdmin):
+class MovieAdmin(admin.ModelAdmin):
     list_display = ['title', 'owner', 'like_count']
     list_filter = ['owner__email']
     search_fields = ['title']

@@ -9,6 +9,12 @@ class LikeSerializer(serializers.ModelSerializer):
         model = Like
         fields = '__all__'
 
+class RatingSerializer(serializers.ModelSerializer):
+    rating = serializers.IntegerField(min_value=1, max_value=5)
+    class Meta:
+        model = Rating
+        fields = ('rating',)
+
 
 class MovieSerializer(serializers.ModelSerializer):
     likes = LikeSerializer(many=True, read_only=True)
@@ -41,8 +47,3 @@ class MovieSerializer(serializers.ModelSerializer):
         model = Movie
         fields = '__all__'
 
-class RatingSerializer(serializers.ModelSerializer):
-    rating = serializers.IntegerField(min_value=1, max_value=5)
-    class Meta:
-        model = Rating
-        fields = ('rating',)

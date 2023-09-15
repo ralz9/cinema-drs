@@ -4,7 +4,7 @@ def send_activation_code(email, code):
     send_mail(
         'Py29',
         f'Привет перейди по этой ссылке чтобы активировать аккаунт: \n\n http://localhost:8000/api/account/activate/{code}',
-        'vladislav001015@gmail.com',
+        'RodionDereha@gmail.com',
         [email]
     )
 

@@ -9,7 +9,7 @@ from applications.cinema.models import Like, Movie, Rating
 from applications.cinema.serializers import RatingSerializer, MovieSerializer
 
 
-class PostAPIView(viewsets.ModelViewSet):
+class MovieAPIView(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
@@ -44,7 +44,7 @@ class PostAPIView(viewsets.ModelViewSet):
 
 
     @action(methods=['POST'], detail=True)
-    def rating(self ,request, pk, *args, **kwargs):
+    def rating(self, request, pk, *args, **kwargs):
         serializer = RatingSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         rating_obj, _ = Rating.objects.get_or_create(owner=request.user, movie_id=pk)
